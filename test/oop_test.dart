@@ -1,5 +1,6 @@
 import 'package:oop_learn/tasks/task2.dart';
 import 'package:oop_learn/tasks/task3.dart';
+import 'package:oop_learn/tasks/task4.dart';
 import 'package:test/test.dart';
 import 'package:oop_learn/oop_learn.dart';
 
@@ -60,6 +61,13 @@ void main() {
           expect(identical(result[1], expectPersons.first), true);
         },
       );
+
+      test('Задание 4', () {
+        final intMethod = IntMethod();
+        final transformer = Transformer(intMethod);
+
+        expect(transformer.transform('data'), 4);
+      },);
     },
   );
 }
