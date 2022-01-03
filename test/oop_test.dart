@@ -41,7 +41,23 @@ void main() {
       test(
         'Задание 3',
         () {
+           final expectPersons = [
+            Person(name: 'Nick'),
+            Person(name: 'Alex'),
+            Person(name: 'Ken'),
+          ];
+
+          final group = Group(
+            leader: Person(name: 'Петр'),
+            people: expectPersons,
+          );
+
           expect(testTask3 is TaskAssigner, true);
+
+          final assigner = testTask3 as TaskAssigner;
+          final result = assigner.assignTasks(group, [1,2,3]);
+          
+          expect(identical(result[1], expectPersons.first), true);
         },
       );
     },
